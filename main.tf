@@ -5,6 +5,13 @@ resource "azurerm_resource_group" "app_grp" {
     name = "app-resources"
     location = "Central India"
 }
+resource "azurerm_storage_account" "storage_account" {
+    name = "steststorage1997"
+    resource_group_name = "app_grp"
+    location = "Central India"
+    account_tier = "Standard"
+    account_replication_type = "LRS"
+}
 resource "azurerm_virtual_network" "app_network" {
     name = "app-network"
     resource_group_name = "app_grp"
